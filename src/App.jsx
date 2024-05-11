@@ -1,17 +1,22 @@
-import { useState } from 'react'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import AboutPage from './pages/About'
+import ContactPage from './pages/Contact'
+import HomePage from './pages/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Super cool count is {count}
-        </button>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
