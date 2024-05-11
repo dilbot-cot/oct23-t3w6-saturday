@@ -11,13 +11,14 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
           {/*Absolute Paths */}
           <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<AboutPage />} />
+          <Route path='/about/services' element={<AboutPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='*' element={<PageNotFound />} />
+
           {/* Relative Paths */}
           {/* <Route path='/' element={<HomePage />}>
             {/* <Route path='about' element={<AboutPage />} />
@@ -26,6 +27,7 @@ function App() {
             </Route>
             <Route path='contact' element={<ContactPage />} />
           </Route> */}
+
         </Routes>
       </BrowserRouter>
     </>
