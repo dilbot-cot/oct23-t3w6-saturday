@@ -5,6 +5,7 @@ import AboutPage from './pages/About'
 import ContactPage from './pages/Contact'
 import HomePage from './pages/Home'
 import PageNotFound from './pages/PageNotFound'
+import BaseLayout from './pages/_baseLayout'
 
 function App() {
   
@@ -13,21 +14,12 @@ function App() {
     <>
     <BrowserRouter>
         <Routes>
-          {/*Absolute Paths */}
-          <Route path='/' element={<HomePage />} />
-          <Route path='/about/services' element={<AboutPage />} />
-          <Route path='/contact' element={<ContactPage />} />
-          <Route path='*' element={<PageNotFound />} />
-
-          {/* Relative Paths */}
-          {/* <Route path='/' element={<HomePage />}>
-            {/* <Route path='about' element={<AboutPage />} />
-            <Route path='about'>
-              <Route path='services' element={<AboutPage />} />
-            </Route>
-            <Route path='contact' element={<ContactPage />} />
-          </Route> */}
-
+          <Route path='/' element={<BaseLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path='/about/services' element={<AboutPage />} />
+            <Route path='/contact' element={<ContactPage />} />
+            <Route path='*' element={<PageNotFound />} /> 
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
